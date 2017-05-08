@@ -1,0 +1,65 @@
+<div ng-app="appRoute"  ng-controller="adminController as ctrl" layout-fill layout="column" layout-align="center">
+  <div layout="row" layout-align="center">
+
+      <div layout="row"  layout-align="center center">
+        <h2 style="color:white;">Parking Utilization</h2>
+      </div>
+
+  </div>
+
+  <div layout="row" layout-align="center">
+    <md-card class="adminMainCard">
+      <div layout="row" layout-sm="column" layout-xs="column" ng-show="dbkgShow">
+
+        <div flex="100">
+          <md-card >
+            <md-card-title>
+              <md-card-title-text>
+                <div><h3 class="md-flex" >Parking Occupancy</h3></div>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+              <div ng-cloak>
+                <md-content class="deskBookingCard" >
+                    <md-tabs md-border-bottom md-autoselect md-stretch-tabs="tbar">
+
+                      <md-tab label="Electronic City">
+                        <div style="padding: 25px; text-align: center;">
+                         <button class="floorBtn" ng-click="fetchBookings('Electronic City')">MLCP<md-tooltip md-direction="bottom">MLCP</md-tooltip></button>
+                         <button  class="floorBtn" >&nbsp;EC1<md-tooltip md-direction="bottom">Electronic city 1</md-tooltip></button>
+                         <button  class="floorBtn">&nbsp;&nbsp;VP&nbsp;&nbsp;<md-tooltip md-direction="bottom">Visitor's parking</md-tooltip></button>
+                       </div>
+                      <center><div ng-if="showChartDiv" style="margin-top:10px"><div id="chartEC" ></div></div></center>
+                      </md-tab>
+
+                      <md-tab label="Sarjapur">
+                        <div style="padding: 25px; text-align: center;">
+                          <button class="floorBtn" ng-click="fetchBookings('Sarjapur')">MLCP<md-tooltip md-direction="bottom">MLCP</md-tooltip></button>
+                       </div>
+                      <center><div id="chart_divDeskSarjapur" ng-if="showChartDiv" ><div id="chartSJP" ></div></div></center>
+                    </md-tab>
+
+                    <md-tab label="Koramangala">
+                      <div style="padding: 25px; text-align: center;">
+                        <button class="floorBtn" ng-click="fetchBookings('Koramangala')">MLCP<md-tooltip md-direction="bottom">MLCP</md-tooltip></button>
+                       </div>
+                       <center><div id="chart_divDeskKoramangala" ng-if="showChartDiv" ><div id="chartKMGL" ></div></div></center>
+                    </md-tab>
+
+                      <md-tab label="Whitefield" >
+                        <div style="padding: 25px; text-align: center;">
+                          <button class="floorBtn" ng-click="fetchBookings('Whitefield')">MLCP<md-tooltip md-direction="bottom">MLCP</md-tooltip></button>
+                        </div>
+                        <center><div id="chart_divDeskWhitefield" ng-if="showChartDiv" ><div id="chartWTFD" ></div></div></center>
+                      </md-tab>
+
+                  </md-tabs>
+                </md-content>
+              </div>
+            </md-card-content>
+          </md-card>
+        </div>
+      </div>
+    </md-card>
+    </div>
+</div>
